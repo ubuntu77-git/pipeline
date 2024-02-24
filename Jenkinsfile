@@ -12,6 +12,6 @@ pipeline {
 	                 }}
 		stage('Deployment'){
 		   steps {
-		sh 'cp target/flipkart.war /home/shruti/Documents/extract_files/apache-tomcat-9.0.85/webapps'
+		sh 'cp target/pipeline.war /home/shruti/Documents/extract_files/apache-tomcat-9.0.85/webapps'
 			}}	
 }}
