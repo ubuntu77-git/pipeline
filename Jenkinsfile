@@ -14,4 +14,8 @@ pipeline {
 		   steps {
 		sh 'cp target/pipeline.war /home/shruti/Documents/extract_files/apache-tomcat-9.0.85/webapps'
 			}}	
+		stage ('slack-notification')
+		    steps {
+	        slackSend baseUrl: 'https://hooks.slack.com/services/', channel: '# devops', color: 'good', message: 'this is for test', teamDomain: 'student', tokenCredentialId: 'slack test'
+		        }}   	
 }}
