@@ -1,5 +1,8 @@
 pipeline {
-	agent any 
+	agent any
+	triggers {
+  pollSCM ignorePostCommitHooks: true, scmpoll_spec: '* * * * *'
+}
 	parameters {
   choice choices: ['DEV', 'QA', 'UAT'], name: 'ENVIRONMENT'
 }
